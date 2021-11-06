@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700;800&display=swap');
+
+:root{
+  --primary-color: #FE918A;
+  --secondary-color: #FFC777;
+  --base-color: #FFF4F0;
+  --gradient-bg: linear-gradient( 90deg ,var(--primary-color), var(--secondary-color));
+}
+
+// h1,h2,h3,h4,h5,h6, div{
+//   padding: 0;
+//   margin: 0;
+// }
+
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: var(--base-color);
+}
+
+.divider{
+  position: relative;
+}
+.divider::before{
+  height: 80%;
+  width: 2px;
+  background-color: rgb(58, 56, 56);
+  position: absolute;
+  content: '';
+  left:0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -10px;
+}
+
+
+.food-btn{
+  // background: red;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  border-radius: 20% 10% ;
+  transition: 250ms ease-in;
+  border: none;
+  svg{
+    margin-left: .6rem;
+  }
+  &:focus-within, &:focus, &:hover{
+    box-shadow: unset;
+    transform: scale(1.05);
+  }
+}
+
+.tile-container{
+
+}
+
+.tile{
+  &.tile-sm{
+    max-width: 200px;
+  }
+  &-icon{
+    display: inline-block;
+    width: min-content;
+  }
+  max-width: 250px;
+  background-color: hsla(35, 100%, 73%, 0.835);
+}
+
+
+.food-btn-primary{
+  @extend .food-btn;
+  background: var(--gradient-bg);
+}

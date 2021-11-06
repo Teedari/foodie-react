@@ -1,0 +1,29 @@
+.food-logo{
+  width: max-content;
+  font-size: 1.2rem;
+  
+  &__art{
+    position: relative;
+    width:40px;
+    height:40px;
+    padding: 1rem 1rem;
+    background: linear-gradient( 90deg ,var(--primary-color), var(--secondary-color));
+    font-weight: 800;
+    border-radius: 50%;
+    &::after{
+      width: 20%;
+      height: 150%;
+      left: 50%;
+      position: absolute;
+      content: '';
+      transform: translateX(-50%) rotateZ(-30deg);
+      z-index: -1;
+      border-radius: 2rem;
+      background: linear-gradient( 90deg ,var(--primary-color), var(--secondary-color));
+
+    }
+  }
+  h3{
+    font-weight: 600;
+  }
+}

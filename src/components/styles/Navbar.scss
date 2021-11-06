@@ -1,0 +1,120 @@
+.food-navbar{
+  padding: 2rem 2.5rem;
+  width: 320px;
+  transform: translateX(-100%);
+  position: fixed;
+  height: 100%;
+  background: #fff;
+  transition: 250ms linear;
+  /* links */
+  &__links{
+    list-style: none;
+    font-weight: 300;
+    li{
+      text-align: center;
+
+      &:hover {
+        a{
+          color: var(--secondary-color);
+        }
+      }
+
+      &.active{
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: var(--secondary-color);
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: -10px;
+        }
+      }
+    }
+  }
+
+  /* search */
+  &__search{
+    width: 100%;
+    padding: .2rem .8rem;
+    background: var(--base-color);
+    border-radius: 0.8rem;
+
+    .icon{
+      display: flex;
+    }
+    input{
+      border: none;
+      background-color: transparent;
+
+      &:focus-within, &:focus{
+        box-shadow: unset;
+        border: none;
+        outline: 0;
+        background-color: inherit;
+      }
+    }
+  }
+
+  &__humberger{
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+    top: 0;
+    box-shadow: 0 2px 4px 2px rgba(0,0,0,0.2);
+    padding: .8rem 1rem;
+    border-radius: 50%;
+    margin: 1rem;
+    transition: 250ms linear;
+    &:hover{
+      background: #fff;
+      color: var(--primary-color);
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+  &.active{
+    background: #fff;
+    color: var(--primary-color);
+    transition: 250ms ease-out;
+  }
+  }
+
+  &.active{
+    transform: translateX(0%);
+  }
+
+}
+
+@media (min-width: 578px) {
+  .food-navbar{
+    position: relative;
+    width: 100%;
+    flex-flow: row !important;
+    flex-flow: row;
+    background: none;
+    transform: translateX(0);
+    &__humberger{
+      display: none;
+    }
+    &__links{
+      align-items: center;
+      font-weight: 600;
+      flex-flow: row !important;
+    }
+    &__search{
+      max-width: 300px !important;
+      background: #fff;
+
+      .icon{
+        color: var(--primary-color);
+      }
+    }
+
+
+  }
+}
