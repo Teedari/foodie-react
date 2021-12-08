@@ -8,6 +8,9 @@ function App() {
    <Layout>
     <Navbar />
     <Hero />
+    <div>
+    
+    </div>
    </Layout>
   );
 }
